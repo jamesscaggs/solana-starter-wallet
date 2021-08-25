@@ -3,6 +3,7 @@ import { Fragment } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { BellIcon, MenuIcon, XIcon } from "@heroicons/react/outline";
 import { PlusIcon } from "@heroicons/react/solid";
+import Link from "next/Link";
 
 const navigation = [
   { name: "Send", href: "#", current: true },
@@ -38,16 +39,20 @@ export default function Navbar() {
                   </Disclosure.Button>
                 </div>
                 <div className='flex-shrink-0 flex items-center'>
-                  <img
-                    className='block lg:hidden h-8 w-auto'
-                    src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
-                    alt='Workflow'
-                  />
-                  <img
-                    className='hidden lg:block h-8 w-auto'
-                    src='https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg'
-                    alt='Workflow'
-                  />
+                  <Link href='/'>
+                    <a>
+                      <img
+                        className='block lg:hidden h-8 w-auto'
+                        src='https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg'
+                        alt='Workflow'
+                      />
+                      <img
+                        className='hidden lg:block h-8 w-auto'
+                        src='https://tailwindui.com/img/logos/workflow-logo-indigo-500-mark-white-text.svg'
+                        alt='Workflow'
+                      />
+                    </a>
+                  </Link>
                 </div>
                 <div className='hidden md:ml-6 md:flex md:items-center md:space-x-4'>
                   {navigation.map((item) => (
@@ -69,13 +74,15 @@ export default function Navbar() {
               </div>
               <div className='flex items-center'>
                 <div className='flex-shrink-0'>
-                  <button
-                    type='button'
-                    className='relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500'
-                  >
-                    <PlusIcon className='-ml-1 mr-2 h-5 w-5' aria-hidden='true' />
-                    <span>Create A Wallet</span>
-                  </button>
+                  <Link href='/create'>
+                    <button
+                      type='button'
+                      className='relative inline-flex items-center px-4 py-2 border border-transparent shadow-sm text-sm font-medium rounded-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-indigo-500'
+                    >
+                      <PlusIcon className='-ml-1 mr-2 h-5 w-5' aria-hidden='true' />
+                      <span>Create A Wallet</span>
+                    </button>
+                  </Link>
                 </div>
                 <div className='hidden md:ml-4 md:flex-shrink-0 md:flex md:items-center'>
                   <button
