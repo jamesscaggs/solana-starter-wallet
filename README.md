@@ -1,4 +1,4 @@
-# Solana Wallet + Next.js + Tailwind CSS Example
+# Solana Starter Wallet with Next.js & Tailwind
 
 This is a starter project for working with Solana web wallet.
 
